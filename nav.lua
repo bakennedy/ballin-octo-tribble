@@ -155,8 +155,14 @@ end
 
 function goRelative(x, z, y)
     goY(y)
-    goX(x)
     goZ(z)
+    goX(x)
+end
+
+function goAbsolute(x, z, y)
+    goY(y - my)
+    goZ(z - mz)
+    goX(x - mx)
 end
 
 function dumpCoords()
