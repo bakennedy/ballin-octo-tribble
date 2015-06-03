@@ -5,6 +5,7 @@ currentDir = "/" .. shell.dir()
 if currentDir ~= "/" then
 	currentDir = currentDir .. "/"
 end
+print("Syncing " .. currentDir)
 
 function download(url, file)
   local content = http.get(url).readAll()
@@ -14,6 +15,7 @@ function download(url, file)
   local f = fs.open(currentDir .. file, "w")
   f.write(content)
   f.close()
+  print(file)
 end
 
 base = "https://raw.githubusercontent.com/bakennedy"
@@ -22,8 +24,8 @@ files = {
 	nav = "/nav.lua",
 	grid = "/grid.lua",
 	indexer = "/indexer.lua",
+	bore = "/bore.lua",
 }
-
 
 for localName, remotePath in pairs(files) do
 	local url = base .. branch .. remotePath

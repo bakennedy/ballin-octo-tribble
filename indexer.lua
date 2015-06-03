@@ -10,7 +10,7 @@ function nextIndex(fileName)
     end
     index = index + 1
     output = fs.open(fileName, "wb")
-    output.write()
+    output.write(index)
     output.close()
     return index
 end
