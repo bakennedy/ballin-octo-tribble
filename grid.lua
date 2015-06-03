@@ -1,11 +1,11 @@
 arg = {...}
 
 os.loadAPI("nav")
-os.loadAPI("index")
+os.loadAPI("indexer")
 
 index = arg[1]
 if index == "auto" then
-	index = index.nextIndex()
+	index = indexer.nextIndex()
 end
 program = arg[2] or "bore"
 extraArguments = {}

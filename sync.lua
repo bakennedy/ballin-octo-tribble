@@ -16,7 +16,7 @@ branch = "/ballin-octo-tribble/master"
 files = {
 	nav = "/nav.lua",
 	grid = "/grid.lua",
-	index = "/index.lua",
+	indexer = "/indexer.lua",
 }
 
 for localName, remotePath in pairs(files) do
