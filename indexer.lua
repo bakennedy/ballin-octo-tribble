@@ -1,4 +1,4 @@
-defaultFileName = "grid_last_index.dat"
+defaultFileName = "/disk/grid_last_index.dat"
 
 function nextIndex(fileName)
     fileName = fileName or defaultFileName
