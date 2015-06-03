@@ -1,3 +1,6 @@
+-- ComputerCraft file sync library
+-- by Brian Kennedy 2015
+
 function download(url, file)
   local content = http.get(url).readAll()
   if not content then
@@ -17,5 +20,6 @@ files = {
 }
 
 for localName, remotePath in pairs(files) do
-	download(remotePath, localName)
+	local url = base .. branch .. remotePath
+	download(url, localName)
 end
