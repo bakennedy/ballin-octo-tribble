@@ -1,4 +1,4 @@
-defaultFileName = "turtle_index.dat"
+defaultFileName = "grid_last_index.dat"
 
 function nextIndex(fileName)
     fileName = fileName or defaultFileName
@@ -7,7 +7,10 @@ function nextIndex(fileName)
         input = fs.open(fileName, "rb")
         index = input.read()
         input.close()
-    output = fs.open(fileName, "w")
-    output.write("" .. (index + 1))
+    end
+    index = index + 1
+    output = fs.open(fileName, "wb")
+    output.write()
     output.close()
     return index
+end
