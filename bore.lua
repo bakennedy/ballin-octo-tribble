@@ -100,4 +100,7 @@ for i=1,depth do
     nav.right(2)
   end
 end
+
+nav.goAbsolute(0, -1, 1)
+nav.turnFace(2)
 eachSlot(turtle.drop)
