@@ -13,3 +13,5 @@ if index > 1 then
 end
 
 shell.run(program, width)
+
+nav.goAbsolute(0, 1, -1)
