@@ -3,4 +3,6 @@
 	grid = "grid.lua",
 	indexer = "indexer.lua",
 	bore = "bore.lua",
+	tunxl = "tunxl.lua",
+	gridTunxl = "gridTunxl.lua",
 }
