@@ -91,7 +91,7 @@ end
 
 nav.left(2)
 
-for i=1,depth do
+for i=1, depth-1 do
   nav.forward()
   checkLeft()
   if isFull() then
@@ -101,6 +101,7 @@ for i=1,depth do
   end
 end
 
+nav.forward()
 nav.goAbsolute(0, -1, 1)
 nav.turnFace(2)
 eachSlot(turtle.drop)
