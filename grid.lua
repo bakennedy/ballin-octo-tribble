@@ -2,12 +2,10 @@ arg = {...}
 
 os.loadAPI("nav")
 os.loadAPI("indexer")
+indexFile = "index_gridBore"
+index = indexer.command(arg[1], indexFile)
+program =  "bore"
 
-index = arg[1]
-if index == "auto" then
-	index = indexer.nextIndex()
-end
-program = arg[2] or "bore"
 extraArguments = {}
 for i=3, #arg do
 	extraArguments.append(arg[i])
