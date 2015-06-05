@@ -23,6 +23,7 @@ for z=1,width do
 		nav.clearForward()
 		nav.left()
 		distance = distance - 1
+	end
 	for i=1, distance do
 		clearForward()
 	end
