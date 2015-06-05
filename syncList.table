@@ -1,0 +1,6 @@
+{
+	nav = "nav.lua",
+	grid = "grid.lua",
+	indexer = "indexer.lua",
+	bore = "bore.lua",
+}

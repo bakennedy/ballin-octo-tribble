@@ -7,27 +7,39 @@ if currentDir ~= "/" then
 end
 print("Syncing " .. currentDir)
 
+function getUrl(url)
+  local response = http.get(url)
+  if not response then
+        return nil
+  end
+  return response.readAll()
+end
+
 function download(url, file)
-  local content = http.get(url).readAll()
+  local content = getUrl(url)
   if not content then
-        error("Could not connect to " .. url)
+    print(file .. "  Failed")
+    return
   end
   local f = fs.open(currentDir .. file, "w")
   f.write(content)
   f.close()
-  print(file)
+  print(file .. "  Ok")
+end
+
+function getFileList(url)
+  local content = getUrl(url)
+  return textutils.unserialize(content)
 end
 
 base = "https://raw.githubusercontent.com/bakennedy"
-branch = "/ballin-octo-tribble/master"
-files = {
-	nav = "/nav.lua",
-	grid = "/grid.lua",
-	indexer = "/indexer.lua",
-	bore = "/bore.lua",
-}
+branch = "/ballin-octo-tribble/master/"
+root = base .. branch
+
+syncListUrl = "syncList.table"
+files = getFileList(root .. syncListUrl)
 
 for localName, remotePath in pairs(files) do
-	local url = base .. branch .. remotePath
+	local url = root .. remotePath
 	download(url, localName)
 end
