@@ -21,3 +21,5 @@ for i=1,distance do
 	unTurn()
 end
 
+nav.goAbsolute(0,0,0)
+
