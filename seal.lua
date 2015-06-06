@@ -2,10 +2,10 @@ arg = {...}
 
 os.loadAPI("nav")
 
-distance = arg[1]
+distance = tonumber(arg[1])
 
-maxY = arg[2]
-maxZ = arg[3]
+maxY = tonumber(arg[2])
+maxZ = tonumber(arg[3])
 
 function checkMove(detect, move)
 	if not detect() then
