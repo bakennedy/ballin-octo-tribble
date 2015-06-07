@@ -67,7 +67,7 @@ print(string.format("Tunnel is %d x %d", maxZ, maxY))
 print("Max Blocks = " .. maxBlocks)
 
 while nav.mx < distance do
-	print(srting.format("Outer While mx = %d distance = %d", nav.mx, distance))
+	print(string.format("Outer While mx = %d distance = %d", nav.mx, distance))
 	nav.dumpCoords()
 	nav.forward()
 	nav.left()
