@@ -58,6 +58,7 @@ function forward(count)
         end
         nav[face+1]()
     end
+    return true
 end
 
 -- back that thing up, or if that doesn't work, turn around and clear
@@ -73,6 +74,7 @@ function back(count)
         end
         nav[face+1]()
     end
+    return true
 end
 
 function left(count)
@@ -83,6 +85,7 @@ function left(count)
         end
         face = (face - 1) % 4
     end
+    return true
 end
 
 function right(count)
@@ -93,6 +96,7 @@ function right(count)
         end
         face = (face + 1) % 4
     end
+    return true
 end
 
 function up(count)
@@ -103,6 +107,7 @@ function up(count)
         end
         nav[5]()
     end
+    return true
 end
 
 function down(count)
@@ -113,6 +118,7 @@ function down(count)
         end
         nav[6]()
     end
+    return true
 end
 
 function turnFace(newFace)
@@ -123,6 +129,7 @@ function turnFace(newFace)
     while face ~= newFace do
         direction()
     end
+    return true
 end
 
 function goX(count)
