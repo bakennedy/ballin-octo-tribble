@@ -172,6 +172,10 @@ function goAbsolute(x, z, y)
     goX(x - mx)
 end
 
+function getX() return mx end
+function getY() return my end
+function getZ() return mz end
+
 function dumpCoords()
     print(string.format("Facing = %d\n  mX = %d, mZ = %d, mY = %d", face, mx, mz, my))
 end

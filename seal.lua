@@ -30,13 +30,13 @@ function placeUp() return placeChecked(turtle.detectUp, turtle.placeUp) end
 function placeDown() return placeChecked(turtle.detectDown, turtle.placeDown) end
 
 function seal() 
-	if nav.my == maxY then
+	if nav.getY() == maxY then
 		placeUp()
-	elseif nav.my == 0 then
+	elseif nav.getY() == 0 then
 		placeDown()
 	end
-	if (nav.mz == 0 and nav.face == 3) or 
-		(nav.mz == maxZ and nav.face == 1) then
+	if (nav.getZ() == 0 and nav.face == 3) or 
+		(nav.getZ() == maxZ and nav.face == 1) then
 		placeForward()
 	end
 end
@@ -46,12 +46,12 @@ function calibrate()
 	maxZ = 0
 	while checkUp() do
 		maxY = maxY + 1
-		print("my = " .. nav.my .. " maxY = " .. maxY)
+		print("my = " .. nav.getY() .. " maxY = " .. maxY)
 	end
 	nav.right(1)
 	while checkForward() do
 		maxZ = maxZ + 1
-		print("mz = " .. nav.mz .. " maxZ = " .. maxZ)
+		print("mz = " .. nav.getZ() .. " maxZ = " .. maxZ)
 	end
 end
 
@@ -66,23 +66,23 @@ maxBlocks = (maxZ + 1) * 2 + (maxY + 1) * 2 - 4
 print(string.format("Tunnel is %d x %d", maxZ, maxY))
 print("Max Blocks = " .. maxBlocks)
 
-while nav.mx < distance do
-	print(string.format("Outer While mx = %d distance = %d", nav.mx, distance))
+while nav.getX() < distance do
+	print(string.format("Outer While mx = %d distance = %d", nav.getX(), distance))
 	nav.dumpCoords()
 	nav.forward()
 	nav.left()
 
 	for i = 1, maxBlocks do
 		seal()
-		if nav.mz == 0 then
-			if nav.my >= maxY then
+		if nav.getZ() == 0 then
+			if nav.getY() >= maxY then
 				nav.right(2)
 				nav.forward()
 			else
 				nav.up()
 			end
-		elseif nav.mz == maxZ then
-			if nav.my == 0 then
+		elseif nav.getZ() == maxZ then
+			if nav.getY() == 0 then
 				nav.left(2)
 				nav.forward()
 			else
