@@ -25,7 +25,10 @@ function placeChecked(detect, place)
 	return false
 end
 
-function placeForward() return placeChecked(turtle.detect, turtle.place) end
+function placeForward()
+	print("placeForward")
+	return placeChecked(turtle.detect, turtle.place) 
+end
 function placeUp() return placeChecked(turtle.detectUp, turtle.placeUp) end
 function placeDown() return placeChecked(turtle.detectDown, turtle.placeDown) end
 
