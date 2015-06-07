@@ -72,7 +72,7 @@ function back(count)
             right()
             right()
         end
-        nav[face+1]()
+        nav[(face + 2) % 4 + 1]()
     end
     return true
 end
@@ -135,7 +135,7 @@ end
 function goX(count)
     if count < 0 then 
         turnFace(2)
-        forward(-1 * count)
+        forward(count)
     elseif count > 0 then
         turnFace(0)
         forward(count)
@@ -145,7 +145,7 @@ end
 function goZ(count)
     if count < 0 then 
         turnFace(3)
-        forward(-1 * count)
+        forward(count)
     elseif count > 0 then
         turnFace(1)
         forward(count)
