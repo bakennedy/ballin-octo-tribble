@@ -7,6 +7,21 @@ distance = tonumber(arg[1])
 maxY = tonumber(arg[2])
 maxZ = tonumber(arg[3])
 
+function readyItem()
+	repeat
+		slot = turtle.getSelectedSlot()
+		count = turtle.getItemCount(slot)
+		if count == 0 then
+			if slot == 16 then 
+				return false 
+			end
+			turtle.select(slot+1)
+		end
+	until count > 1 or slot == 16
+	return slot
+end
+		
+
 function checkMove(detect, move)
 	if not detect() then
 		return move()
@@ -20,6 +35,7 @@ function checkDown() return checkMove(turtle.detectDown, nav.down) end
 
 function placeChecked(detect, place)
 	if not detect() then
+		readyItem()
 		return place()
 	end
 	return false
