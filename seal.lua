@@ -64,12 +64,15 @@ if not maxY or not maxZ then
 	nav.turnFace(0)
 end
 
-nav.dumpCoords()
+maxBlocks = maxZ *2 + maxY*2 - 4
+print("Max Blocks = " .. maxBlocks)
 
 while nav.mx < distance do
+	print("Outer While")
+	nav.dumpCoords()
 	nav.forward()
 	nav.left()
-	maxBlocks = maxZ *2 + maxY*2 - 4
+
 	for i = 1, maxBlocks do
 		seal()
 		if nav.mz == 0 then
