@@ -46,20 +46,25 @@ function calibrate()
 	maxZ = 0
 	while checkUp() do
 		maxY = maxY + 1
+		print("my = " .. nav.my .. " maxY = " .. maxY)
 	end
 	nav.right(1)
 	while checkForward() do
 		maxZ = maxZ + 1
+		print("mz = " .. nav.mz .. " maxZ = " .. maxZ)
 	end
 	print(string.format("Calibrated Tunnel is %d x %d", 
 		maxZ, maxY))
 end
 
-if not maxY and maxZ then
+
+if not maxY or not maxZ then
 	calibrate()
 	nav.goAbsolute(0,0,0)
 	nav.turnFace(0)
 end
+
+nav.dumpCoords()
 
 while nav.mx < distance do
 	nav.forward()
@@ -68,7 +73,7 @@ while nav.mx < distance do
 	for i = 1, maxBlocks do
 		seal()
 		if nav.mz == 0 then
-			if nav.my == maxY then
+			if nav.my >= maxY then
 				nav.right(2)
 				nav.forward()
 			else
@@ -84,6 +89,7 @@ while nav.mx < distance do
 		else
 			nav.forward()
 		end
+		nav.dumpCoords()
 	end
 	nav.right()
 end
