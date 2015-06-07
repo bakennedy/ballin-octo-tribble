@@ -53,8 +53,6 @@ function calibrate()
 		maxZ = maxZ + 1
 		print("mz = " .. nav.mz .. " maxZ = " .. maxZ)
 	end
-	print(string.format("Calibrated Tunnel is %d x %d", 
-		maxZ, maxY))
 end
 
 
@@ -65,6 +63,7 @@ if not maxY or not maxZ then
 end
 
 maxBlocks = (maxZ + 1) * 2 + (maxY + 1) * 2 - 4
+print(string.format("Tunnel is %d x %d", maxZ, maxY))
 print("Max Blocks = " .. maxBlocks)
 
 while nav.mx < distance do
