@@ -32,7 +32,8 @@ function placeDown() return placeChecked(turtle.detectDown, turtle.placeDown) en
 function seal() 
 	if nav.getY() == maxY then
 		placeUp()
-	elseif nav.getY() == 0 then
+	end
+	if nav.getY() == 0 then
 		placeDown()
 	end
 	if (nav.getZ() == 0 and nav.face == 3) or 
