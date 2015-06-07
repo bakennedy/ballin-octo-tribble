@@ -135,7 +135,7 @@ end
 function goX(count)
     if count < 0 then 
         turnFace(2)
-        forward(count)
+        forward(-1 * count)
     elseif count > 0 then
         turnFace(0)
         forward(count)
@@ -145,7 +145,7 @@ end
 function goZ(count)
     if count < 0 then 
         turnFace(3)
-        forward(count)
+        forward(-1 * count)
     elseif count > 0 then
         turnFace(1)
         forward(count)
