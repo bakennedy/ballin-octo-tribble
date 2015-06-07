@@ -8,6 +8,7 @@ maxY = tonumber(arg[2])
 maxZ = tonumber(arg[3])
 
 function readyItem()
+	local slot, count
 	repeat
 		slot = turtle.getSelectedSlot()
 		count = turtle.getItemCount(slot)
@@ -17,7 +18,7 @@ function readyItem()
 			end
 			turtle.select(slot+1)
 		end
-	until count > 1 or slot == 16
+	until count > 0 or slot == 16
 	return slot
 end
 		
