@@ -15,8 +15,8 @@ function checkMove(detect, move)
 end
 
 function checkForward() return checkMove(turtle.detect, nav.forward) end
-function checkUp() return checkMove(turtle.up, nav.up) end
-function checkDown() return checkMove(turtle.down, nav.down) end
+function checkUp() return checkMove(turtle.detectUp, nav.up) end
+function checkDown() return checkMove(turtle.detectDown, nav.down) end
 
 function placeChecked(detect, place)
 	if not turtle.detect() then
