@@ -166,7 +166,7 @@ function goAbsolute(x, z, y)
 end
 
 function dumpCoords()
-    print("Facing = %d\n  mX = %d, mZ = %d, mY = %d", face, mx, mz, my)
+    print(string.format("Facing = %d\n  mX = %d, mZ = %d, mY = %d", face, mx, mz, my))
 end
 
 function test()
