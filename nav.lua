@@ -175,6 +175,7 @@ end
 function getX() return mx end
 function getY() return my end
 function getZ() return mz end
+function getFace() return face end
 
 function dumpCoords()
     print(string.format("Face= %d mX= %d, mZ= %d, mY= %d", face, mx, mz, my))

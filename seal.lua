@@ -39,8 +39,9 @@ function seal()
 	if nav.getY() == 0 then
 		placeDown()
 	end
-	if (nav.getZ() == 0 and nav.face == 3) or 
-		(nav.getZ() == maxZ and nav.face == 1) then
+
+	if (nav.getZ() == 0 and nav.getFace() == 3) or 
+		(nav.getZ() == maxZ and nav.getFace() == 1) then
 		placeForward()
 	end
 end
