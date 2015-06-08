@@ -1,27 +1,12 @@
 arg = {...}
 
 os.loadAPI("nav")
+os.loadAPI("inv")
 
 distance = tonumber(arg[1])
 
 maxY = tonumber(arg[2])
 maxZ = tonumber(arg[3])
-
-function readyItem()
-	local slot, count
-	repeat
-		slot = turtle.getSelectedSlot()
-		count = turtle.getItemCount(slot)
-		if count == 0 then
-			if slot == 16 then 
-				return false 
-			end
-			turtle.select(slot+1)
-		end
-	until count > 0 or slot == 16
-	return slot
-end
-		
 
 function checkMove(detect, move)
 	if not detect() then
@@ -36,7 +21,7 @@ function checkDown() return checkMove(turtle.detectDown, nav.down) end
 
 function placeChecked(detect, place)
 	if not detect() then
-		readyItem()
+		inv.readyItem()
 		return place()
 	end
 	return false

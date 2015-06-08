@@ -5,5 +5,7 @@
 	bore = "bore.lua",
 	tunxl = "tunxl.lua",
 	gridTunxl = "gridTunxl.lua",
-	seal = "seal.lua"
+	seal = "seal.lua",
+    build = "build.lua",
+    inv = "inv.lua"
 }
