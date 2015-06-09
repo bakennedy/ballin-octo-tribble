@@ -67,10 +67,10 @@ function rectangleFloor(xSize, zSize)
 end
 
 argHandler = {
-    "forwardDown": function () forwardDown(arg[2]) end,
-    "rectangleWall": function () rectangleWall(arg[2], arg[3], arg[4] or 1) end,
-    "threeSidedWall": function () threeSidedWall(arg[2], arg[3], arg[4] or 1) end,
-    "rectangleFloor": function () rectangleFloor(arg[2], arg[3], arg[4] or 1) end,
+    forwardDown = function () forwardDown(arg[2]) end,
+    rectangleWall =  function () rectangleWall(arg[2], arg[3], arg[4] or 1) end,
+    threeSidedWall =  function () threeSidedWall(arg[2], arg[3], arg[4] or 1) end,
+    rectangleFloor = function () rectangleFloor(arg[2], arg[3], arg[4] or 1) end
 }
 
 argHandler[arg[1]]()
