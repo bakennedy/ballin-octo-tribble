@@ -48,7 +48,7 @@ function threeSidedWall(xSize, zSize, ySize)
                 nav.left()
             end
         end
-        nav.left(2)
+        nav.turnFace(0)
     end
 end
 
