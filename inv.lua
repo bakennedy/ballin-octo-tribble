@@ -1,6 +1,6 @@
 function readyItem(item)
 	local slot, count
-	for i=1,16
+	for i=1,16 do
 		slot = turtle.getSelectedSlot()
 		count = turtle.getItemCount(slot)
 		detail = turtle.getItemDetail()
