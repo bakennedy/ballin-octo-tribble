@@ -7,7 +7,7 @@ function reliableDown()
     if turtle.detectDown() then
             nav.clearDown()
         end
-        inv.readyItem()
+        inv.readyItem("chisel:glass")
         turtle.placeDown()
 end
 
