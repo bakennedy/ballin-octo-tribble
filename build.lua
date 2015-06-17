@@ -3,19 +3,19 @@ arg = {...}
 os.loadAPI("nav")
 os.loadAPI("inv")
 
-function reliableDown()
+function reliableDown(item)
     if turtle.detectDown() then
             nav.clearDown()
         end
-        inv.readyItem("chisel:glass")
+        inv.readyItem(item)
         turtle.placeDown()
 end
 
-function forwardDown(count)
+function forwardDown(count, item)
     count = count or 1
     for i=1,count do
         nav.forward()
-        reliableDown()
+        reliableDown(item)
     end
 end
 
@@ -52,13 +52,13 @@ function threeSidedWall(xSize, zSize, ySize)
     end
 end
 
-function rectangleFloor(xSize, zSize)
+function rectangleFloor(xSize, zSize, item)
     for z=1,zSize do
+        if z % 2 == 1 then
+            nav.right()
+        end
         for x=1,xSize do
-            if z % 2 == 1 then
-                nav.right()
-            end
-            forwardDown()
+            forwardDown(item)
             if z % 2 == 1 then
                 nav.right()
             end
@@ -70,7 +70,7 @@ argHandler = {
     forwardDown = function () forwardDown(arg[2]) end,
     rectangleWall =  function () rectangleWall(arg[2], arg[3], arg[4] or 1) end,
     threeSidedWall =  function () threeSidedWall(arg[2], arg[3], arg[4] or 1) end,
-    rectangleFloor = function () rectangleFloor(arg[2], arg[3], arg[4] or 1) end
+    rectangleFloor = function () rectangleFloor(arg[2], arg[3], arg[4]) end
 }
 
 argHandler[arg[1]]()
