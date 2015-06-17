@@ -17,7 +17,7 @@ function readyItem(item)
 		if count > 0 and (not item or detail.name == item) then
 		    return slot
 	    end
-		turtle.select((slot + 1) % 16 + 1)
+		turtle.select(slot % 16 + 1)
 	end
 end
 
