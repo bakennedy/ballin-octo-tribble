@@ -54,14 +54,17 @@ end
 
 function rectangleFloor(xSize, zSize, item)
     for z=1,zSize do
-        if z % 2 == 1 then
-            nav.right()
+        if z > 1 then
+            nav.turnFace(1)
         end
         for x=1,xSize do
             forwardDown(item)
-            if z % 2 == 1 then
-                nav.right()
-            end
+            if nav.getFace() == 1 then
+                if z % 2 == 0 then
+                    nav.turnFace(2)
+                else
+                    nav.turnFace(0)
+                end
         end
     end
 end
