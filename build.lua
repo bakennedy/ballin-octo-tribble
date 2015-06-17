@@ -65,6 +65,7 @@ function rectangleFloor(xSize, zSize, item)
                 else
                     nav.turnFace(0)
                 end
+            end
         end
     end
 end
