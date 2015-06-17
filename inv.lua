@@ -1,11 +1,12 @@
-function mapInventory() {
+
+function mapInventory()
     local map = {}
     for i=1, 16 do
         local item = turtle.getItemDetail(i)
         map[item.name] = turtle.getItemCount(i)
     end
     return map
-}
+end
 
 function readyItem(item)
 	local slot, count
