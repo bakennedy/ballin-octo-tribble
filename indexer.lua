@@ -40,3 +40,5 @@ function command(cmd, indexFile)
         return indexer.nextIndex(indexFile)
     end
     return cmd
+end
+
