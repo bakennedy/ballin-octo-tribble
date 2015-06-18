@@ -26,7 +26,8 @@ print("Starting index = " .. index)
 
 dx = math.floor((index - 1) / yUnits) * 2 + (index - 1) % (yUnits)
 dy = ((index - 1) % yUnits) * 3 + math.floor((index - 1) / yUnits) % 3
-nav.goRelative(dx, zOffset, dy)
+print("Going to x = " .. (dx + xOffset) .. " y = " .. (dy + yOffset)
+nav.goRelative(dx + xOffset, zOffset, dy + yOffset)
 nav.turnFace(endFacing)
 print("Running " .. program)
 shell.run(program, unpack(extraArguments))
