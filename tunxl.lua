@@ -15,12 +15,12 @@ for z=1,width do
 	local distance = depth
 	if z % 2 == 0 then
 		nav.right()
-		nav.clearForward()
+		clearForward()
 		nav.right()
 		distance = distance - 1
 	elseif z > 1 then
 		nav.left()
-		nav.clearForward()
+		clearForward()
 		nav.left()
 		distance = distance - 1
 	end
