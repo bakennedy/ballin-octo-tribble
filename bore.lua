@@ -1,6 +1,6 @@
 arg = {...}
 depth = arg[1] or 64
-
+print("Boring to depth " .. depth)
 function set(list)
   temp = {}
   for i=1,#list do
@@ -88,7 +88,7 @@ for i=1,depth do
     bringBack(depth)
   end
 end
-
+print("Half way there!")
 nav.left(2)
 
 for i=1, depth-1 do
@@ -105,3 +105,4 @@ nav.forward()
 nav.goAbsolute(0, -1, 1)
 nav.turnFace(2)
 eachSlot(turtle.drop)
+print("Bored.")

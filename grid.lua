@@ -28,5 +28,5 @@ dx = math.floor((index - 1) / yUnits) * 2 + (index - 1) % (yUnits)
 dy = ((index - 1) % yUnits) * 3 + math.floor((index - 1) / yUnits) % 3
 nav.goRelative(dx, zOffset, dy)
 nav.turnFace(endFacing)
-
+print("Running " .. program)
 shell.run(program, unpack(extraArguments))
