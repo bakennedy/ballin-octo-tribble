@@ -19,13 +19,10 @@ yOffset = 0
 zOffset = 0
 endFacing = 1
 
-
-
-
-print("Starting index = " .. index)
-
 dx = math.floor((index - 1) / yUnits) * 2 + (index - 1) % (yUnits)
 dy = ((index - 1) % yUnits) * 3 + math.floor((index - 1) / yUnits) % 3
+
+print("Starting index = " .. index)
 print("Going to x = " .. (dx + xOffset) .. " y = " .. (dy + yOffset)
 nav.goRelative(dx + xOffset, zOffset, dy + yOffset)
 nav.turnFace(endFacing)
